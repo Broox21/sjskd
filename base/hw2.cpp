@@ -1,10 +1,10 @@
 #include <iostream>
 #include <unistd.h>
 using namespace std;
-
 void SelectionSort(int N);
+
 int main(){
-	int N;//the array size
+	int N;//array size
 	cout<<"How long would you like the array to be?"<<endl;
 	cin>>N;//getting the user input
 	//checking to see if input is valid
@@ -33,13 +33,12 @@ void SelectionSort(int N){
 			cin.clear();
 			cin.ignore(256,'\n');
 			cout<<"Please re-enter array element "<<input_ctr+1<<endl;//putting z+1 for better readability for user
-		       cin>>array[input_ctr];
-		}	       
+			cin>>array[input_ctr];
+		}
 	}
 	cout<<"Array elements:"<<endl;
 	for(print_ctr1=0;print_ctr1<N;print_ctr1++){
 		cout<<array[print_ctr1]<<" ";//printing array elements
-	
 	}
 	cout<<endl;
 	//moving boundary of unsorted array
@@ -49,11 +48,11 @@ void SelectionSort(int N){
 		for(x=curArrSpot+1;x<N;x++){
 			if(array[x]<array[min])
 				min=x;
-			//swap min and first element
-			temp=array[min];
-			array[min]=array[curArrSpot];
-			array[curArrSpot]=temp;
 		}
+		//swap min and first element
+		temp=array[curArrSpot];
+		array[curArrSpot]=array[min];
+		array[min]=temp;
 	}
 	//printing array in sorted order
 	cout<<"Please wait while the array is sorted..."<<endl<<endl<<endl;

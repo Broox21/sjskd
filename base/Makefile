@@ -1,6 +1,6 @@
-clean:
-	rm -f ./a.out
-
-run: hw2.cpp
+run:
 	g++ hw2.cpp
 	./a.out	
+
+clean:
+	rm -f a.out
